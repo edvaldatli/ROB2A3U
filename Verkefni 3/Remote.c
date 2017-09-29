@@ -11,33 +11,32 @@ task main()
 		motor[leftMotor] = vexRT[Ch3] / 2;
 		motor[rightMotor] = vexRT[Ch2] / 2;
 
-		if(vexRT[Btn5U] == 1)       	//If button 5U is pressed...
+		if(vexRT[Btn5D] == 1)
 		{
 			if(SensorValue[limitSwitch] == 0){
-				motor[armMotor] = 60;    	//...raise the arm.
+				motor[armMotor] = 60;
 			}
 		}
-		else if(vexRT[Btn5D] == 1)  	//Else, if button 5D is pressed...
+		else if(vexRT[Btn5U] == 1)
 		{
 				motor[armMotor] = -60;
+		}
+		else
+		{
+			motor[armMotor] = 0;
+		}
 
-		}
-		else                      		//Else (neither button is pressed)...
+		if(vexRT[Btn6U] == 1)
 		{
-			motor[armMotor] = 0;      	//...stop the arm.
+			motor[clawMotor] = 60;
 		}
-
-		if(vexRT[Btn6U] == 1)       	//If Button 6U is pressed...
+		else if(vexRT[Btn6D] == 1)
 		{
-			motor[clawMotor] = 60;  		//...close the gripper.
+			motor[clawMotor] = -60;
 		}
-		else if(vexRT[Btn6D] == 1)  	//Else, if button 6D is pressed...
+		else
 		{
-			motor[clawMotor] = -60; 		//...open the gripper.
-		}
-		else                      		//Else (neither button is pressed)...
-		{
-			motor[clawMotor] = 0;    		//...stop the gripper.
+			motor[clawMotor] = 0;
 		}
 	}
 }
