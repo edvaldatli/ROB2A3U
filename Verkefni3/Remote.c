@@ -13,8 +13,22 @@ task stopAllMotors(){
 	motor[clawMotor] = 0;
 }
 
+task LCD()
+{
+  clearLCDLine(0);
+  clearLCDLine(1);
+
+  bLCDBacklight = true;
+  displayLCDPos(0,1);
+  displayNextLCDString("Verkefni nr: 4");
+
+  displayLCDPos(1,1);
+  displayNextLCDString("Version: 1.0.0");
+}
+
 task main()
 {
+	StartTask(LCD);
 	while (SensorValue[pushBtn] == 0 && vexRT[Btn7U] == 0){
 		motor[leftMotor] = vexRT[Ch3] / 2;
 		motor[rightMotor] = vexRT[Ch2] / 2;
