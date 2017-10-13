@@ -37,6 +37,12 @@ task sonar(){
 			motor[leftMotor]  = 63;
 		}
 		else{
+			motor[rightMotor] = -63;
+			motor[leftMotor] = -63;
+			sleep(2000);
+			motor[rightMotor] = 63;
+			motor[leftMotor] = -63;
+			sleep(1000);
 			StartTask(stopAllMotors);
 		}
 }
