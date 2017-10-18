@@ -1,0 +1,31 @@
+task lightSensor(){
+  while(true){
+    while (SensorValue(lightSensor) > 300) {
+      StartTask(stopAllMotors);
+    }
+  }
+}
+
+task sonarSensor(){
+  while (true) {
+    while(SonarValue(sonarSensor) > 30 || SonarValue(sonarSensor) == -1 ){
+      motor[rightMotor] = 60;
+      motor[leftMotor] = -60;
+      Wait1Msec(2000);
+    }
+    motor[rightMotor] = 60;
+    motor[leftMotor] = 60;
+  }
+}
+
+task stopAllMotors(){
+  motor[rightMotor] = 0;
+  motor[leftMotor] = 0;
+}
+
+task Main(){
+  while (SensorValue[pushBtn] == 0){
+    StartTask(lightSensor);
+		StartTask(sonarSensor);
+	}
+}
