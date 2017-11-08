@@ -12,3 +12,14 @@ while(Btn7u && pushBtn == 0)
     }
   }
 }
+betra svona
+while(Btn7u || pushBtn == 0)
+{
+  if(lights_on){
+  driveForward()
+    if(proximity)
+    {
+      turn()
+    }
+  }
+}
