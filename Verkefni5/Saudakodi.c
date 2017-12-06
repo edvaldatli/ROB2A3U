@@ -17,3 +17,4 @@ while(true)
     // Örlítið til vinstri
     }
 }
+
