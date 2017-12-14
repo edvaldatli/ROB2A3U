@@ -25,9 +25,8 @@
 |*    [I/O Port]          [Name]              [Type]                [Description]                     *|
 |*    Motor  - Port 2     rightMotor          VEX 3-wire module     Right side motor                  *|
 |*    Motor  - Port 3     leftMotor           VEX 3-wire module     Left side motor                   *|
-|*    Analog - Port 1     lineFollowerRIGHT   VEX Light Sensor      Front-right, facing down          *|
-|*    Analog - Port 2     lineFollowerCENTER  VEX Light Sensor      Front-center, facing down         *|
-|*    Analog - Port 3     lineFollowerLEFT    VEX Light Sensor      Front-left, facing down           *|
+|*	  Sensor - Port 8	  lightSensor		  Sensor 				Top sensor  					  *|
+|* 	  Sensor - Port 18 	  sonarSensor		  Sensor 				Front sensor
 \*-----------------------------------------------------------------------------------------------4246-*/
 
 //############################## 		ABORT		##########################//
